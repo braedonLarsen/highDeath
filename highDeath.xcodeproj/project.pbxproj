@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45616E36293A35460058B151 /* BigGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45616E35293A35460058B151 /* BigGameController.swift */; };
 		459B56D029379A7200F79548 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B56CF29379A7200F79548 /* AppDelegate.swift */; };
 		459B56D229379A7200F79548 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B56D129379A7200F79548 /* SceneDelegate.swift */; };
 		459B56D429379A7200F79548 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B56D329379A7200F79548 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		45616E35293A35460058B151 /* BigGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigGameController.swift; sourceTree = "<group>"; };
 		459B56CC29379A7200F79548 /* highDeath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = highDeath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		459B56CF29379A7200F79548 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		459B56D129379A7200F79548 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				459B56CF29379A7200F79548 /* AppDelegate.swift */,
 				459B56D129379A7200F79548 /* SceneDelegate.swift */,
 				459B56D329379A7200F79548 /* ViewController.swift */,
+				45616E35293A35460058B151 /* BigGameController.swift */,
 				459B56D529379A7200F79548 /* Main.storyboard */,
 				459B56D829379A7300F79548 /* Assets.xcassets */,
 				459B56DA29379A7300F79548 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			files = (
 				459B56D429379A7200F79548 /* ViewController.swift in Sources */,
 				459B56D029379A7200F79548 /* AppDelegate.swift in Sources */,
+				45616E36293A35460058B151 /* BigGameController.swift in Sources */,
 				459B56D229379A7200F79548 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
