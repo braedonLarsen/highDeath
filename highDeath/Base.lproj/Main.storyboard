@@ -65,12 +65,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOc-ct-M7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031" y="695"/>
+            <point key="canvasLocation" x="1397" y="725"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="4gb-Kj-Unl">
             <objects>
-                <viewController id="hQD-k4-qKV" sceneMemberID="viewController">
+                <viewController id="hQD-k4-qKV" customClass="GameViewController" customModule="highDeath" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3WL-XH-I7E">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -262,6 +262,25 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Eza-KT-9Hd"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="fiveCharacterAttack" destination="CEX-ve-W2N" id="mBJ-V5-8wK"/>
+                        <outlet property="fiveCharacterHealth" destination="E4Z-QA-Y5g" id="Wna-i5-VIm"/>
+                        <outlet property="fiveCharacterOutlet" destination="ZVK-Ds-NfG" id="4fC-Dz-Hbv"/>
+                        <outlet property="fourCharacterAttack" destination="j58-bG-fcD" id="lhv-cl-Od2"/>
+                        <outlet property="fourCharacterHealth" destination="bum-JI-s4O" id="rif-sQ-foj"/>
+                        <outlet property="fourCharacterOutlet" destination="CPe-Lw-efJ" id="ZFw-ky-ANJ"/>
+                        <outlet property="oneCharacterAttack" destination="VEO-9t-PiX" id="N5f-f4-9PM"/>
+                        <outlet property="oneCharacterHealth" destination="OgD-CQ-dhf" id="LTK-Ep-YS6"/>
+                        <outlet property="oneCharacterOutlet" destination="Rxe-mr-Wo6" id="s7e-Ja-8sL"/>
+                        <outlet property="threeCharacterAttack" destination="zkL-7c-RIx" id="G61-bl-uYC"/>
+                        <outlet property="threeCharacterHealth" destination="k6Z-kO-eBT" id="sW7-0P-OZy"/>
+                        <outlet property="threeCharacterOutlet" destination="tSQ-hn-2qQ" id="7XV-km-vqb"/>
+                        <outlet property="twoCharacterHealth" destination="jhx-rM-eCx" id="o7m-NP-n2M"/>
+                        <outlet property="twoCharacterOutlet" destination="DYM-Hr-Xgc" id="xeg-bF-JNd"/>
+                        <outlet property="villianAttack" destination="RfY-H2-09B" id="hte-Sf-Low"/>
+                        <outlet property="villianHealth" destination="RfY-H2-09B" id="sCU-uB-JEi"/>
+                        <outlet property="villianLabel" destination="SfH-hP-BjP" id="O43-uA-9Vf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrc-rv-S1p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -274,13 +293,22 @@
                     <view key="view" contentMode="scaleToFill" id="dwO-4y-K30">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2L-Aj-1GT">
+                                <rect key="frame" x="128" y="64" width="135" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="z58-Ol-ZGt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4o-pe-m97" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2534" y="4"/>
+            <point key="canvasLocation" x="2533.8461538461538" y="3.5545023696682461"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eEU-Sf-UpA">
@@ -305,6 +333,9 @@
         <segue reference="jqX-Ct-LaQ"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
