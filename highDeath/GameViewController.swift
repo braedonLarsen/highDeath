@@ -40,7 +40,18 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    var heroes: Array<Character> = Array()
+    //Palidan
+    heroes[0] = Character(ar: 3, h: 300, aD: 20 )
+    //Ranger
+    heroes[1] = Character(aR: 1.5, h: 200, aD: 50)
+    //Wizard
+    heroes[2] = Character(aR: 2, h: 100, aD: 100)
+    //Rouge
+    heroes[3] = Character(aR: 1, h: 150, aD: 75)
+    
+    
+    
     /*
     // MARK: - Navigation
 
