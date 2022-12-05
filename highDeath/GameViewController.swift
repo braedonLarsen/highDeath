@@ -36,7 +36,11 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        fourCharacterOutlet.image = UIImage(named: "paladinPic")
+        fiveCharacterOutlet.image = UIImage(named: "roguePic")
+        oneCharacterOutlet.image = UIImage(named: "rangerPic")
+        twoCharacterOutlet.image = UIImage(named: "newClericPic")
+        threeCharacterOutlet.image = UIImage(named: "wizardPic")
         // Do any additional setup after loading the view.
     }
     
