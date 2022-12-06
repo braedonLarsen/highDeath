@@ -31,9 +31,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var threeCharacterAttack: UISlider!
     @IBOutlet weak var fourCharacterAttack: UISlider!
     @IBOutlet weak var fiveCharacterAttack: UISlider!
-    
-    
-    
+    var heroes: Array<Character> = Array()
     override func viewDidLoad() {
         super.viewDidLoad()
         fourCharacterOutlet.image = UIImage(named: "paladinPic")
@@ -41,18 +39,17 @@ class GameViewController: UIViewController {
         oneCharacterOutlet.image = UIImage(named: "rangerPic")
         twoCharacterOutlet.image = UIImage(named: "newClericPic")
         threeCharacterOutlet.image = UIImage(named: "wizardPic")
+        //paladin
+        heroes.append(Character(aR: 3.0, h: 300, aD: 20 ))
+        //Ranger
+        heroes.append(Character(aR: 1.5, h: 200, aD: 50))
+        //Wizard
+        heroes.append(Character(aR: 2.0, h: 100, aD: 100))
+        //Rouge
+        heroes.append(Character(aR: 1.0, h: 150, aD: 75))
+        
         // Do any additional setup after loading the view.
     }
-    
-    var heroes: Array<Character> = Array()
-    //Palidan
-    heroes[0] = Character(ar: 3, h: 300, aD: 20 )
-    //Ranger
-    heroes[1] = Character(aR: 1.5, h: 200, aD: 50)
-    //Wizard
-    heroes[2] = Character(aR: 2, h: 100, aD: 100)
-    //Rouge
-    heroes[3] = Character(aR: 1, h: 150, aD: 75)
     
     
     

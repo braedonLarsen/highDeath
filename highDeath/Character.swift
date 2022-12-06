@@ -12,6 +12,7 @@ public class Character
     var attackRate: Double
     var health: Int
     var attackDamage: Int
+    var Mana: Int
     
     
     
@@ -25,10 +26,19 @@ public class Character
     }
     
 //villian init
-    
+    init(VaR: Int, Vh: Int, VaD: Int )
+    {
+        attackRate = VaR
+        health = Vh
+        attackDamage = VaD
+    }
     
 //healer init
-
+    init(Hh: Int, Hm: Int )
+    {
+        health = Hh
+        Mana = Hm
+    }
     
     
   
