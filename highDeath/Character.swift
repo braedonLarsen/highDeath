@@ -7,16 +7,11 @@
 
 import Foundation
 
-public class Character
+public class heroes
 {
     var attackRate: Double
     var health: Int
     var attackDamage: Int
-    var Mana: Int
-    
-    
-    
-    
  //hero init
     init(aR: Double, h: Int, aD: Int )
     {
@@ -24,22 +19,29 @@ public class Character
         health = h
         attackDamage = aD
     }
+}
+public class villian
+{
+    var attackRate: Double
+    var health: Int
+    var attackDamage: Int
     
-//villian init
-    init(VaR: Int, Vh: Int, VaD: Int )
-    {
-        attackRate = VaR
-        health = Vh
-        attackDamage = VaD
-    }
-    
-//healer init
+    //villian init
+        init(VaR: Double, Vh: Int, VaD: Int )
+        {
+            attackRate = VaR
+            health = Vh
+            attackDamage = VaD
+        }
+}
+public class healer
+{var Mana: Int
+    var health: Int
+    //healer init
     init(Hh: Int, Hm: Int )
     {
         health = Hh
         Mana = Hm
     }
     
-    
-  
 }

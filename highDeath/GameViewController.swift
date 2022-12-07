@@ -31,7 +31,10 @@ class GameViewController: UIViewController {
     @IBOutlet weak var threeCharacterAttack: UISlider!
     @IBOutlet weak var fourCharacterAttack: UISlider!
     @IBOutlet weak var fiveCharacterAttack: UISlider!
-    var heroes: Array<Character> = Array()
+  //  var heroesArray: Array<heroes> = Array()
+    var heroesArray = [heroes]()
+    var villainArray = [villian]()
+    var healerStats = healer(Hh: 100, Hm: 500)
     override func viewDidLoad() {
         super.viewDidLoad()
         fourCharacterOutlet.image = UIImage(named: "paladinPic")
@@ -40,14 +43,20 @@ class GameViewController: UIViewController {
         twoCharacterOutlet.image = UIImage(named: "newClericPic")
         threeCharacterOutlet.image = UIImage(named: "wizardPic")
         //paladin
-        heroes.append(Character(aR: 3.0, h: 300, aD: 20 ))
+        heroesArray.append(heroes(aR: 3.0, h: 300, aD: 20 ))
         //Ranger
-        heroes.append(Character(aR: 1.5, h: 200, aD: 50))
+        heroesArray.append(heroes(aR: 1.5, h: 200, aD: 50))
         //Wizard
-        heroes.append(Character(aR: 2.0, h: 100, aD: 100))
+        heroesArray.append(heroes(aR: 2.0, h: 100, aD: 100))
         //Rouge
-        heroes.append(Character(aR: 1.0, h: 150, aD: 75))
-        
+        heroesArray.append(heroes(aR: 1.0, h: 150, aD: 75))
+        //troll
+        villainArray.append(villian(VaR: 3.0, Vh: 750, VaD: 60))
+        //Troglodyte
+        villainArray.append(villian(VaR: 1.5, Vh: 500, VaD:40))
+        //Skeleton
+        villainArray.append(villian(VaR: 1.0, Vh: 300, VaD: 30))
+        //orc
         // Do any additional setup after loading the view.
     }
     
