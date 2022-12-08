@@ -42,6 +42,9 @@ class GameViewController: UIViewController {
         oneCharacterOutlet.image = UIImage(named: "rangerPic")
         twoCharacterOutlet.image = UIImage(named: "newClericPic")
         threeCharacterOutlet.image = UIImage(named: "wizardPic")
+        
+        //heroes
+        
         //paladin
         heroesArray.append(heroes(aR: 3.0, h: 300, aD: 20 ))
         //Ranger
@@ -50,13 +53,23 @@ class GameViewController: UIViewController {
         heroesArray.append(heroes(aR: 2.0, h: 100, aD: 100))
         //Rouge
         heroesArray.append(heroes(aR: 1.0, h: 150, aD: 75))
+        
+        //villains
+        
         //troll
         villainArray.append(villian(VaR: 3.0, Vh: 750, VaD: 60))
         //Troglodyte
-        villainArray.append(villian(VaR: 1.5, Vh: 500, VaD:40))
+        villainArray.append(villian(VaR: 1.5, Vh: 400, VaD:40))
         //Skeleton
         villainArray.append(villian(VaR: 1.0, Vh: 300, VaD: 30))
         //orc
+        villainArray.append(villian(VaR: 4.0, Vh: 500, VaD: 55))
+        //dragon
+        villainArray.append(villian(VaR: 5.0, Vh: 1000, VaD: 100))
+        //golem
+        villainArray.append(villian(VaR: 4.0, Vh: 900, VaD: 30))
+        //dire wolf
+        villainArray.append(villian(VaR: 1.0, Vh: 350, VaD: 40))
         // Do any additional setup after loading the view.
     }
     
