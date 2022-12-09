@@ -81,6 +81,13 @@ class GameViewController: UIViewController {
            
             
         }
+    func timeUpdate()
+        {
+            for heroes in heroesArray
+            {
+                
+            }
+        }
             
     }
     
