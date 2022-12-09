@@ -48,7 +48,7 @@ class GameViewController: UIViewController {
         //paladin
         heroesArray.append(heroes(aR: 3.0, h: 300, aD: 20 ))
         //Ranger
-        heroesArray.append(heroes(aR: 1.5, h: 200, aD: 50))
+        heroesArray.append(heroes(aR: 2.0, h: 200, aD: 50))
         //Wizard
         heroesArray.append(heroes(aR: 2.0, h: 100, aD: 100))
         //Rouge
@@ -73,7 +73,16 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+    func timing(){
+        let timer = Timer.scheduledTimer(withTimeInterval: 1.0 , repeats: true) {
+            
+            timer in
+            
+           
+            
+        }
+            
+    }
     
     /*
     // MARK: - Navigation
