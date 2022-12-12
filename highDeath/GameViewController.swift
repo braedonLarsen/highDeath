@@ -35,6 +35,8 @@ class GameViewController: UIViewController {
     var heroesArray = [heroes]()
     var villainArray = [villian]()
     var healerStats = healer(Hh: 100, Hm: 500)
+    var timeSince = 0
+    var currentVillian = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         fourCharacterOutlet.image = UIImage(named: "paladinPic")
@@ -71,12 +73,21 @@ class GameViewController: UIViewController {
         //dire wolf
         villainArray.append(villian(VaR: 1.0, Vh: 350, VaD: 40))
         // Do any additional setup after loading the view.
+        
+        
+        
+        
+        
+        //Running Logic
+        
+        
     }
     
     func timing(){
-        let timer = Timer.scheduledTimer(withTimeInterval: 1.0 , repeats: true) {
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.5 , repeats: true) {
             
             timer in
+            
             
            
             
@@ -85,7 +96,23 @@ class GameViewController: UIViewController {
         {
             for heroes in heroesArray
             {
+                heroes.timeToAttack -= Double(timeSince)
                 
+            }
+            villainArray[currentVillian].timeToAttack -= Double(timeSince)
+            timeSince = 0
+        }
+        
+    func canAttack()
+        {
+            
+            for heroes in heroesArray
+            {
+                if heroes.timeToAttack <= 0
+                {
+                    heroes.timeToAttack = heroes.attackRate
+                    heroes.attack(v:villainArray[currentVillian])
+                }
             }
         }
             
