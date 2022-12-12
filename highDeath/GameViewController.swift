@@ -38,6 +38,8 @@ class GameViewController: UIViewController {
     var timeSince = 0
     var currentVillian = 0
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         fourCharacterOutlet.image = UIImage(named: "paladinPic")
         fiveCharacterOutlet.image = UIImage(named: "roguePic")
@@ -47,13 +49,13 @@ class GameViewController: UIViewController {
         
         //heroes
         
-        //paladin
+        //paladin pos 0
         heroesArray.append(heroes(aR: 3.0, h: 300, aD: 20 ))
-        //Ranger
+        //Ranger pos 1
         heroesArray.append(heroes(aR: 2.0, h: 200, aD: 50))
-        //Wizard
+        //Wizard pos 2
         heroesArray.append(heroes(aR: 2.0, h: 100, aD: 100))
-        //Rouge
+        //Rouge pos 3
         heroesArray.append(heroes(aR: 1.0, h: 150, aD: 75))
         
         //villains
@@ -83,14 +85,18 @@ class GameViewController: UIViewController {
         
     }
     
+    @IBAction func fourCharacterAction(_ sender: UITapGestureRecognizer) {
+    }
+    
+    
+    
     func timing(){
         let timer = Timer.scheduledTimer(withTimeInterval: 0.5 , repeats: true) {
             
             timer in
             
-            
-           
-            
+            timeUpdate()
+            canAttack()
         }
     func timeUpdate()
         {
@@ -114,7 +120,21 @@ class GameViewController: UIViewController {
                     heroes.attack(v:villainArray[currentVillian])
                 }
             }
+            if villainArray[currentVillian].timeToAttack <= 0
+            {
+                var chosenHero = Int.random(in: 0..<5)
+                villainArray[currentVillian].timeToAttack = villainArray[currentVillian].attackRate
+                villainArray[currentVillian].attack(h: heroesArray[chosenHero])
+            }
         }
+    func updateBars()
+        {
+            //Palidan pos 0 outlets 4, Ranger pos 1 outlets 1, Wizard pos 2 outlet 3, Rouge pos 3 outlet five
+            
+            
+        }
+    
+    
             
     }
     

@@ -98,6 +98,10 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPe-Lw-efJ">
                                 <rect key="frame" x="94" y="204" width="79" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NqX-wg-5YV" appends="YES" id="ImE-hO-2dT"/>
+                                </connections>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVK-Ds-NfG">
                                 <rect key="frame" x="216" y="204" width="79" height="79"/>
@@ -291,6 +295,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrc-rv-S1p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="NqX-wg-5YV">
+                    <connections>
+                        <action selector="fourCharacterAction:" destination="hQD-k4-qKV" id="yCc-VD-nK8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1804.6153846153845" y="3.5545023696682461"/>
         </scene>
