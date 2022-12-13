@@ -84,10 +84,24 @@ public class villian
     {
         health -= d
     }
-    
-
-   
-    
+    func quickHeal(){
+        
+    }
+    func groupHeal(){
+        
+    }
+    func protection(){
+        
+    }
+    func revive(){
+        
+    }
+    func atkBuff(){
+        
+    }
+    func attack(){
+        
+    }
 }
 public class healer
 {var Mana: Int
