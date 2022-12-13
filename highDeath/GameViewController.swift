@@ -36,7 +36,7 @@ class GameViewController: UIViewController {
     var heroesArray = [heroes]()
     var villainArray = [villian]()
     var healerStats = healer(Hh: 100, Hm: 500)
-    var timeSince = 0
+    var timeSince: Double = 0.0
     var currentVillian = 0
     override func viewDidLoad() {
         
@@ -97,11 +97,15 @@ class GameViewController: UIViewController {
         let timer = Timer.scheduledTimer(withTimeInterval: 0.25 , repeats: true) {
             
             timer in
+            self.timeSince += Double(0.25)
             print("tick")
             timeUpdate()
             canAttack()
             updateBars()
+            setVillian()
+            
            print("tock")
+            print("\(self.timeSince)")
         }
     func timeUpdate()
         {
@@ -129,7 +133,7 @@ class GameViewController: UIViewController {
             if villainArray[currentVillian].timeToAttack <= 0
             {
                 print("villian can attack")
-                var chosenHero = Int.random(in: 0..<5)
+                var chosenHero = Int.random(in: 0..<4)
                 villainArray[currentVillian].timeToAttack = villainArray[currentVillian].attackRate
                 villainArray[currentVillian].attack(h: heroesArray[chosenHero])
             }
@@ -182,6 +186,18 @@ class GameViewController: UIViewController {
             
             currentVillianAttack = Double(villainArray[currentVillian].timeToAttack/villainArray[currentVillian].attackRate)
             villianAttack.value = Float(currentVillianAttack)
+            
+        }
+    func setVillian()
+        {
+            if villainArray[currentVillian].health <= 0
+            {
+               currentVillian = Int.random(in: 0..<6)
+               villianLabel.text = "\(villainArray[currentVillian].name)"
+            }
+            
+            
+            
             
         }
    
