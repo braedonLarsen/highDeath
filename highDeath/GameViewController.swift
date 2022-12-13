@@ -37,7 +37,7 @@ class GameViewController: UIViewController {
     var villainArray = [villian]()
     var healerStats = healer(Hh: 100, Hm: 500)
     var timeSince: Double = 0.0
-    var currentVillian = 0
+    var currentVillian = Int.random(in: 0..<5)
     override func viewDidLoad() {
         
         
@@ -62,19 +62,19 @@ class GameViewController: UIViewController {
         //villains
         
         //troll
-        villainArray.append(villian(VaR: 3.0, Vh: 750, VaD: 60, n:"Troll"))
+        villainArray.append(villian(VaR: 3.0, Vh: 2000, VaD: 60, n:"Troll"))
         //Troglodyte
-        villainArray.append(villian(VaR: 1.5, Vh: 400, VaD:40, n: "Troglodyte"))
+        villainArray.append(villian(VaR: 1.5, Vh: 5000, VaD:40, n: "Troglodyte"))
         //Skeleton
-        villainArray.append(villian(VaR: 1.0, Vh: 300, VaD: 30, n: "Skeleton"))
+        villainArray.append(villian(VaR: 1.0, Vh: 500, VaD: 30, n: "Skeleton"))
         //orc
         villainArray.append(villian(VaR: 4.0, Vh: 500, VaD: 55, n: "Orc"))
         //dragon
-        villainArray.append(villian(VaR: 5.0, Vh: 1000, VaD: 100, n: "Dragon"))
+        villainArray.append(villian(VaR: 5.0, Vh: 25000, VaD: 100, n: "Dragon"))
         //golem
-        villainArray.append(villian(VaR: 4.0, Vh: 900, VaD: 30, n: "Golem"))
+        villainArray.append(villian(VaR: 4.0, Vh: 15000, VaD: 30, n: "Golem"))
         //dire wolf
-        villainArray.append(villian(VaR: 1.0, Vh: 350, VaD: 40, n: "Dire Wolf"))
+        villainArray.append(villian(VaR: 1.0, Vh: 1500, VaD: 40, n: "Dire Wolf"))
         // Do any additional setup after loading the view.
         
         
@@ -94,17 +94,18 @@ class GameViewController: UIViewController {
     
     
     func timing(){
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.25 , repeats: true) {
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.001 , repeats: true) {
             
             timer in
-            self.timeSince += Double(0.25)
-            print("tick")
+            self.timeSince += Double(0.001)
+            //print("tick")
+            setVillian()
+            deathSave()
             timeUpdate()
             canAttack()
             updateBars()
-            setVillian()
             
-           print("tock")
+           //print("tock")
             print("\(self.timeSince)")
         }
     func timeUpdate()
@@ -123,21 +124,25 @@ class GameViewController: UIViewController {
             
             for heroes in heroesArray
             {
-                if heroes.timeToAttack <= 0
+                if heroes.isDead == false
                 {
-                    print("hero can attack")
-                    heroes.timeToAttack = heroes.attackRate
-                    heroes.attack(v:villainArray[currentVillian])
+                    if heroes.timeToAttack <= 0
+                    {
+                        print("hero can attack")
+                        heroes.timeToAttack = heroes.attackRate
+                        heroes.attack(v:villainArray[currentVillian])
+                    }
+                }
+                if villainArray[currentVillian].timeToAttack <= 0
+                {
+                    print("villian can attack")
+                    var chosenHero = Int.random(in: 0..<4)
+                    villainArray[currentVillian].timeToAttack = villainArray[currentVillian].attackRate
+                    villainArray[currentVillian].attack(h: heroesArray[chosenHero])
                 }
             }
-            if villainArray[currentVillian].timeToAttack <= 0
-            {
-                print("villian can attack")
-                var chosenHero = Int.random(in: 0..<4)
-                villainArray[currentVillian].timeToAttack = villainArray[currentVillian].attackRate
-                villainArray[currentVillian].attack(h: heroesArray[chosenHero])
-            }
         }
+    
     func updateBars()
         {
             //Palidan pos 0 outlets 4, Ranger pos 1 outlets 1, Wizard pos 2 outlet 3, Rouge pos 3 outlet five
@@ -190,14 +195,29 @@ class GameViewController: UIViewController {
         }
     func setVillian()
         {
-            if villainArray[currentVillian].health <= 0
+            if villainArray[currentVillian].isDead == true
             {
-               currentVillian = Int.random(in: 0..<6)
+                print("\(villainArray[currentVillian].health)")
+                currentVillian = Int.random(in: 0..<6)
+                villainArray[currentVillian].health = villainArray[currentVillian].maxHealth
                villianLabel.text = "\(villainArray[currentVillian].name)"
             }
             
-            
-            
+        }
+    func deathSave()
+        {
+            for heroes in heroesArray
+            {
+                if heroes.health <= 0
+                {
+                    heroes.isDead = true
+                }
+                
+            }
+            if villainArray[currentVillian].health <= 0
+            {
+                villainArray[currentVillian].isDead = true
+            }
             
         }
    
