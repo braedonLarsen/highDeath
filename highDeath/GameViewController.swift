@@ -91,12 +91,13 @@ class GameViewController: UIViewController {
     
     
     func timing(){
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.5 , repeats: true) {
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.25 , repeats: true) {
             
             timer in
             
             timeUpdate()
             canAttack()
+            updateBars()
         }
     func timeUpdate()
         {
@@ -108,7 +109,7 @@ class GameViewController: UIViewController {
             villainArray[currentVillian].timeToAttack -= Double(timeSince)
             timeSince = 0
         }
-        
+    
     func canAttack()
         {
             
@@ -130,6 +131,58 @@ class GameViewController: UIViewController {
     func updateBars()
         {
             //Palidan pos 0 outlets 4, Ranger pos 1 outlets 1, Wizard pos 2 outlet 3, Rouge pos 3 outlet five
+            
+            var palidanHealthPrecent = 0.0
+            var rangerHealthPrecent = 0.0
+            var wizardHealthPrecent = 0.0
+            var rougeHealthPrecent = 0.0
+            var currentVillianHealth = 0.0
+            
+            //Health bar updates
+            palidanHealthPrecent = Double(heroesArray[0].health/heroesArray[0].maxHealth)
+            fourCharacterHealth.value = Float(palidanHealthPrecent)
+            
+            rangerHealthPrecent = Double(heroesArray[1].health/heroesArray[1].maxHealth)
+            oneCharacterHealth.value = Float(rangerHealthPrecent)
+            
+            wizardHealthPrecent = Double(heroesArray[2].health/heroesArray[2].maxHealth)
+            threeCharacterHealth.value = Float(wizardHealthPrecent)
+            
+            rougeHealthPrecent = Double(heroesArray[3].health/heroesArray[2].maxHealth)
+            fiveCharacterHealth.value = Float(rougeHealthPrecent)
+            
+            currentVillianHealth = Double(villainArray[currentVillian].health/villainArray[currentVillian].maxHealth)
+            villianHealth.value = Float(currentVillianHealth)
+            
+            //Attack bar updates
+            
+            var palidanAttackPrecent = 0.0
+            var rangerAttackPrecent = 0.0
+            var wizardAttackPrecent = 0.0
+            var rougeAttackPrecent = 0.0
+            var currentVillianAttack = 0.0
+            
+            palidanAttackPrecent = Double(heroesArray[0].timeToAttack/heroesArray[0].attackRate)
+            fourCharacterAttack.value = Float(palidanAttackPrecent)
+            
+            rangerAttackPrecent = Double(heroesArray[1].timeToAttack/heroesArray[1].attackRate)
+            oneCharacterAttack.value = Float(rangerAttackPrecent)
+            
+            wizardAttackPrecent = Double(heroesArray[2].timeToAttack/heroesArray[2].attackRate)
+            threeCharacterAttack.value = Float(wizardAttackPrecent)
+            
+            rougeAttackPrecent = Double(heroesArray[3].timeToAttack/heroesArray[2].attackRate)
+            fiveCharacterAttack.value = Float(rougeAttackPrecent)
+            
+            currentVillianAttack = Double(villainArray[currentVillian].timeToAttack/villainArray[currentVillian].attackRate)
+            villianAttack.value = Float(currentVillianAttack)
+            
+            
+            
+            
+            
+                
+            
             
             
         }

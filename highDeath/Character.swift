@@ -10,13 +10,16 @@ import Foundation
 public class heroes
 {
     var attackRate: Double
+    var maxHealth: Int
     var health: Int
     var attackDamage: Int
     var timeToAttack: Double
+    
  //hero init
     init(aR: Double, h: Int, aD: Int )
     {
         attackRate = aR
+        maxHealth = h
         health = h
         attackDamage = aD
         timeToAttack = attackRate
@@ -46,6 +49,7 @@ public class villian
 {
     var attackRate: Double
     var health: Int
+    var maxHealth: Int
     var attackDamage: Int
     var timeToAttack: Double
     
@@ -54,6 +58,7 @@ public class villian
         {
             attackRate = VaR
             health = Vh
+            maxHealth = Vh
             attackDamage = VaD
             timeToAttack = attackRate
         }
