@@ -52,15 +52,17 @@ public class villian
     var maxHealth: Int
     var attackDamage: Int
     var timeToAttack: Double
+    var name: String
     
     //villian init
-        init(VaR: Double, Vh: Int, VaD: Int )
+    init(VaR: Double, Vh: Int, VaD: Int ,n: String)
         {
             attackRate = VaR
             health = Vh
             maxHealth = Vh
             attackDamage = VaD
             timeToAttack = attackRate
+            name = n
         }
     func attack(h:heroes)
     {

@@ -21,6 +21,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var fourCharacterOutlet: UIImageView!
     @IBOutlet weak var fiveCharacterOutlet: UIImageView!
     
+    @IBOutlet weak var deBugOutlet: UILabel!
     @IBOutlet weak var oneCharacterHealth: UISlider!
     @IBOutlet weak var twoCharacterHealth: UISlider!
     @IBOutlet weak var threeCharacterHealth: UISlider!
@@ -61,19 +62,19 @@ class GameViewController: UIViewController {
         //villains
         
         //troll
-        villainArray.append(villian(VaR: 3.0, Vh: 750, VaD: 60))
+        villainArray.append(villian(VaR: 3.0, Vh: 750, VaD: 60, n:"Troll"))
         //Troglodyte
-        villainArray.append(villian(VaR: 1.5, Vh: 400, VaD:40))
+        villainArray.append(villian(VaR: 1.5, Vh: 400, VaD:40, n: "Troglodyte"))
         //Skeleton
-        villainArray.append(villian(VaR: 1.0, Vh: 300, VaD: 30))
+        villainArray.append(villian(VaR: 1.0, Vh: 300, VaD: 30, n: "Skeleton"))
         //orc
-        villainArray.append(villian(VaR: 4.0, Vh: 500, VaD: 55))
+        villainArray.append(villian(VaR: 4.0, Vh: 500, VaD: 55, n: "Orc"))
         //dragon
-        villainArray.append(villian(VaR: 5.0, Vh: 1000, VaD: 100))
+        villainArray.append(villian(VaR: 5.0, Vh: 1000, VaD: 100, n: "Dragon"))
         //golem
-        villainArray.append(villian(VaR: 4.0, Vh: 900, VaD: 30))
+        villainArray.append(villian(VaR: 4.0, Vh: 900, VaD: 30, n: "Golem"))
         //dire wolf
-        villainArray.append(villian(VaR: 1.0, Vh: 350, VaD: 40))
+        villainArray.append(villian(VaR: 1.0, Vh: 350, VaD: 40, n: "Dire Wolf"))
         // Do any additional setup after loading the view.
         
         
@@ -81,6 +82,8 @@ class GameViewController: UIViewController {
         
         
         //Running Logic
+        timing()
+        
         
         
     }
@@ -94,10 +97,11 @@ class GameViewController: UIViewController {
         let timer = Timer.scheduledTimer(withTimeInterval: 0.25 , repeats: true) {
             
             timer in
-            
+            print("tick")
             timeUpdate()
             canAttack()
             updateBars()
+           print("tock")
         }
     func timeUpdate()
         {
@@ -117,12 +121,14 @@ class GameViewController: UIViewController {
             {
                 if heroes.timeToAttack <= 0
                 {
+                    print("hero can attack")
                     heroes.timeToAttack = heroes.attackRate
                     heroes.attack(v:villainArray[currentVillian])
                 }
             }
             if villainArray[currentVillian].timeToAttack <= 0
             {
+                print("villian can attack")
                 var chosenHero = Int.random(in: 0..<5)
                 villainArray[currentVillian].timeToAttack = villainArray[currentVillian].attackRate
                 villainArray[currentVillian].attack(h: heroesArray[chosenHero])
@@ -177,15 +183,8 @@ class GameViewController: UIViewController {
             currentVillianAttack = Double(villainArray[currentVillian].timeToAttack/villainArray[currentVillian].attackRate)
             villianAttack.value = Float(currentVillianAttack)
             
-            
-            
-            
-            
-                
-            
-            
-            
         }
+   
     
     
             
