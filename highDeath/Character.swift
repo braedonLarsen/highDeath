@@ -14,6 +14,7 @@ public class heroes
     var health: Int
     var attackDamage: Int
     var timeToAttack: Double
+    var isDead: Bool
     
  //hero init
     init(aR: Double, h: Int, aD: Int )
@@ -23,6 +24,7 @@ public class heroes
         health = h
         attackDamage = aD
         timeToAttack = attackRate
+        isDead = false
     }
     func getHealth() -> Int
     {
@@ -53,6 +55,7 @@ public class villian
     var attackDamage: Int
     var timeToAttack: Double
     var name: String
+    var isDead: Bool
     
     //villian init
     init(VaR: Double, Vh: Int, VaD: Int ,n: String)
@@ -63,6 +66,7 @@ public class villian
             attackDamage = VaD
             timeToAttack = attackRate
             name = n
+            isDead = false 
         }
     func attack(h:heroes)
     {
