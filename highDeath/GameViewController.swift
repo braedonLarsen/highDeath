@@ -38,7 +38,7 @@ class GameViewController: UIViewController {
     var healerStats = healer(Hh: 100, Hm: 500,At: 40)
     var timeSince: Double = 0.0
     var currentVillian = Int.random(in: 0..<5)
-    var activeVillian = villian(VaR: 0, Vh: 0, VaD: 0, n: "nil")
+    var activeVillian = villian(VaR: 0, Vh: 45, VaD: 0, n: "nil")
     var boolDict = ["paladin":false, "rouge":false,"ranger":false,"cleric":false,"mage":false]
    
    
