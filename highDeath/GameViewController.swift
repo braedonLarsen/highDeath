@@ -48,9 +48,9 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         fourCharacterOutlet.image = UIImage(named: "paladinPic")
         fiveCharacterOutlet.image = UIImage(named: "roguePic")
-        oneCharacterOutlet.image = UIImage(named: "rangerPic")
+        oneCharacterOutlet.image = UIImage(named: "RangerPic")
         twoCharacterOutlet.image = UIImage(named: "newClericPic")
-        threeCharacterOutlet.image = UIImage(named: "wizardPic")
+        threeCharacterOutlet.image = UIImage(named: "wizardpic")
         
         //heroes
         
