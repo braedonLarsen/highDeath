@@ -38,6 +38,9 @@ class GameViewController: UIViewController {
     var healerStats = healer(Hh: 100, Hm: 500)
     var timeSince: Double = 0.0
     var currentVillian = Int.random(in: 0..<5)
+    var activeVillian = villian(VaR: 0, Vh: 0, VaD: 0, n: "nil")
+   
+   
     override func viewDidLoad() {
         
         
@@ -75,6 +78,8 @@ class GameViewController: UIViewController {
         villainArray.append(villian(VaR: 4.0, Vh: 15000, VaD: 30, n: "Golem"))
         //dire wolf
         villainArray.append(villian(VaR: 1.0, Vh: 1500, VaD: 40, n: "Dire Wolf"))
+        var activeVillian = villainArray[currentVillian]
+        villianLabel.text = "\(activeVillian.name)"
         // Do any additional setup after loading the view.
         
         
@@ -115,7 +120,7 @@ class GameViewController: UIViewController {
                 heroes.timeToAttack -= Double(timeSince)
                 
             }
-            villainArray[currentVillian].timeToAttack -= Double(timeSince)
+            activeVillian.timeToAttack -= Double(timeSince)
             timeSince = 0
         }
     
@@ -130,15 +135,15 @@ class GameViewController: UIViewController {
                     {
                         print("hero can attack")
                         heroes.timeToAttack = heroes.attackRate
-                        heroes.attack(v:villainArray[currentVillian])
+                        heroes.attack(v:activeVillian)
                     }
                 }
-                if villainArray[currentVillian].timeToAttack <= 0
+                if activeVillian.timeToAttack <= 0
                 {
                     print("villian can attack")
                     var chosenHero = Int.random(in: 0..<4)
-                    villainArray[currentVillian].timeToAttack = villainArray[currentVillian].attackRate
-                    villainArray[currentVillian].attack(h: heroesArray[chosenHero])
+                    activeVillian.timeToAttack = activeVillian.attackRate
+                    activeVillian.attack(h: heroesArray[chosenHero])
                 }
             }
         }
@@ -166,7 +171,7 @@ class GameViewController: UIViewController {
             rougeHealthPrecent = Double(heroesArray[3].health/heroesArray[2].maxHealth)
             fiveCharacterHealth.value = Float(rougeHealthPrecent)
             
-            currentVillianHealth = Double(villainArray[currentVillian].health/villainArray[currentVillian].maxHealth)
+            currentVillianHealth = Double(activeVillian.health/activeVillian.maxHealth)
             villianHealth.value = Float(currentVillianHealth)
             
             //Attack bar updates
@@ -189,18 +194,20 @@ class GameViewController: UIViewController {
             rougeAttackPrecent = Double(heroesArray[3].timeToAttack/heroesArray[2].attackRate)
             fiveCharacterAttack.value = Float(rougeAttackPrecent)
             
-            currentVillianAttack = Double(villainArray[currentVillian].timeToAttack/villainArray[currentVillian].attackRate)
+            currentVillianAttack = Double(activeVillian.timeToAttack/activeVillian.attackRate)
             villianAttack.value = Float(currentVillianAttack)
             
         }
     func setVillian()
         {
-            if villainArray[currentVillian].isDead == true
+            
+            if activeVillian.isDead == true
             {
-                print("\(villainArray[currentVillian].health)")
-                currentVillian = Int.random(in: 0..<6)
-                villainArray[currentVillian].health = villainArray[currentVillian].maxHealth
+              print("new villian")
+                activeVillian = villainArray[Int.random(in: 0..<5)]
+                activeVillian.health = activeVillian.maxHealth
                villianLabel.text = "\(villainArray[currentVillian].name)"
+                
             }
             
         }
@@ -214,9 +221,9 @@ class GameViewController: UIViewController {
                 }
                 
             }
-            if villainArray[currentVillian].health <= 0
+            if activeVillian.health <= 0
             {
-                villainArray[currentVillian].isDead = true
+                activeVillian.isDead = true
             }
             
         }
