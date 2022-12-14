@@ -46,6 +46,12 @@ public class heroes
     {
         v.takeDamage(d:attackDamage)
     }
+    func quickHeal(){
+        health += 100
+    }
+    func atkBuff(){
+        attackDamage += 5
+    }
 }
 public class villian
 {
@@ -110,12 +116,21 @@ public class villian
 public class healer
 {var Mana: Int
     var health: Int
+    var attack: Int
     //healer init
-    init(Hh: Int, Hm: Int )
+    init(Hh: Int, Hm: Int,At:Int )
     {
         health = Hh
         Mana = Hm
+        attack = At
+    }
+    func quickHeal(){
+        health += 100
     }
     
+    func attack(v:villian)
+    {
+        v.health -= attack
+    }
     
 }

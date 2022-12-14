@@ -35,10 +35,11 @@ class GameViewController: UIViewController {
   //  var heroesArray: Array<heroes> = Array()
     var heroesArray = [heroes]()
     var villainArray = [villian]()
-    var healerStats = healer(Hh: 100, Hm: 500)
+    var healerStats = healer(Hh: 100, Hm: 500,At: 40)
     var timeSince: Double = 0.0
     var currentVillian = Int.random(in: 0..<5)
     var activeVillian = villian(VaR: 0, Vh: 0, VaD: 0, n: "nil")
+    var boolDict = ["paladin":false, "rouge":false,"ranger":false,"cleric":false,"mage":false]
    
    
     override func viewDidLoad() {
@@ -83,7 +84,83 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
+       /* @IBAction func paladin(_ sender: UITapGestureRecognizer) {
+            boolDict.updateValue(true, forKey: "paladin")
+            boolDict.updateValue(false, forKey: "rouge")
+            boolDict.updateValue(false, forKey: "ranger")
+            boolDict.updateValue(false, forKey: "cleric")
+            boolDict.updateValue(false, forKey: "mage")
+        }
         
+        @IBAction func rouge(_ sender: UITapGestureRecognizer) {
+            boolDict.updateValue(false, forKey: "paladin")
+            boolDict.updateValue(true, forKey: "rouge")
+            boolDict.updateValue(false, forKey: "ranger")
+            boolDict.updateValue(false, forKey: "cleric")
+            boolDict.updateValue(false, forKey: "mage")
+        }
+        
+        @IBAction func ranger(_ sender: UITapGestureRecognizer) {
+            boolDict.updateValue(false, forKey: "paladin")
+            boolDict.updateValue(false, forKey: "rouge")
+            boolDict.updateValue(true, forKey: "ranger")
+            boolDict.updateValue(false, forKey: "cleric")
+            boolDict.updateValue(false, forKey: "mage")
+        }
+        
+        @IBAction func cleric(_ sender: UITapGestureRecognizer) {
+            boolDict.updateValue(false, forKey: "paladin")
+            boolDict.updateValue(false, forKey: "rouge")
+            boolDict.updateValue(false, forKey: "ranger")
+            boolDict.updateValue(true, forKey: "cleric")
+            boolDict.updateValue(false, forKey: "mage")
+        }
+        @IBAction func mage(_ sender: UITapGestureRecognizer) {
+            boolDict.updateValue(false, forKey: "paladin")
+            boolDict.updateValue(false, forKey: "rouge")
+            boolDict.updateValue(false, forKey: "ranger")
+            boolDict.updateValue(false, forKey: "cleric")
+            boolDict.updateValue(true, forKey: "mage")
+        }
+        
+        @IBAction func quickHealButton(_ sender: Any) {
+            if boolDict["ranger"] == true{
+                heroesArray[1].quickHeal()
+            }
+            else if boolDict["paladin"] == true{
+                heroesArray[0].quickHeal()
+            }
+            else if boolDict["rouge"] == true {
+                heroesArray[3].quickHeal()
+            }
+            else if boolDict["cleric"] == true{
+                healerStats.quickHeal()
+            }
+            else if  boolDict["mage"] == true{
+                heroesArray[2].quickHeal()
+            }
+        }
+        
+        @IBAction func groupHealButton(_ sender: Any) {
+            for heroes in heroesArray
+            {
+                heroes.quickHeal()
+            }
+        }
+        @IBAction func attack(_ sender: Any) {
+            healerStats
+        }
+        
+        @IBAction func buff(_ sender: Any) {
+        }
+        
+        @IBAction func protect(_ sender: Any) {
+            
+        }
+        @IBAction func revive(_ sender: Any) {
+            
+        }
+        */
         
         
         //Running Logic
