@@ -6,7 +6,12 @@
 //
 
 import UIKit
-
+class AppData
+{
+    static var gaggleOHeroes = [heroes]()
+    static var gaggleOVillians = [villian]()
+    
+}
 class GameViewController: UIViewController {
 
   //Lord of the Outlets
@@ -330,6 +335,11 @@ class GameViewController: UIViewController {
                 
             }
             
+        }
+    func updateAppData()
+        {
+            AppData.gaggleOHeroes = heroesArray
+            AppData.gaggleOVillians = villainArray 
         }
     func deathSave()
         {
