@@ -83,7 +83,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wizardpic" translatesAutoresizingMaskIntoConstraints="NO" id="Rxe-mr-Wo6">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wizardpic" translatesAutoresizingMaskIntoConstraints="NO" id="Rxe-mr-Wo6">
                                 <rect key="frame" x="35" y="330" width="79" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
@@ -91,7 +91,7 @@
                                     <outletCollection property="gestureRecognizers" destination="0nk-AC-z57" appends="YES" id="eJn-5o-Adz"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DYM-Hr-Xgc">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DYM-Hr-Xgc">
                                 <rect key="frame" x="156" y="330" width="79" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
@@ -99,7 +99,7 @@
                                     <outletCollection property="gestureRecognizers" destination="iah-jh-Zii" appends="YES" id="MJ4-VQ-Dzy"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RangerPic" translatesAutoresizingMaskIntoConstraints="NO" id="tSQ-hn-2qQ">
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RangerPic" translatesAutoresizingMaskIntoConstraints="NO" id="tSQ-hn-2qQ">
                                 <rect key="frame" x="273" y="330" width="79" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
@@ -107,7 +107,7 @@
                                     <outletCollection property="gestureRecognizers" destination="KwD-Me-qVF" appends="YES" id="qf7-VF-dBT"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPe-Lw-efJ">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPe-Lw-efJ">
                                 <rect key="frame" x="94" y="204" width="79" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
@@ -115,7 +115,7 @@
                                     <outletCollection property="gestureRecognizers" destination="agL-1B-MWZ" appends="YES" id="ldq-sZ-LUZ"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVK-Ds-NfG">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVK-Ds-NfG">
                                 <rect key="frame" x="216" y="204" width="79" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
@@ -211,13 +211,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNg-5F-lET">
-                                <rect key="frame" x="292" y="138" width="82" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="yhS-D5-VOi">
                                 <rect key="frame" x="0.0" y="483" width="390" height="211"/>
                                 <subviews>
@@ -310,7 +303,6 @@
                     <navigationItem key="navigationItem" id="Eza-KT-9Hd"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="deBugOutlet" destination="YNg-5F-lET" id="t0m-Ov-Zew"/>
                         <outlet property="fiveCharacterAttack" destination="CEX-ve-W2N" id="mBJ-V5-8wK"/>
                         <outlet property="fiveCharacterHealth" destination="E4Z-QA-Y5g" id="Wna-i5-VIm"/>
                         <outlet property="fiveCharacterOutlet" destination="ZVK-Ds-NfG" id="4fC-Dz-Hbv"/>
