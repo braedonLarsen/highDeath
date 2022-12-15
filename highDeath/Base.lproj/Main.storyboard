@@ -51,25 +51,34 @@
             </objects>
             <point key="canvasLocation" x="1030.7692307692307" y="3.5545023696682461"/>
         </scene>
-        <!--View Controller-->
+        <!--Stats View View Controller-->
         <scene sceneID="5QG-JA-NlE">
             <objects>
-                <viewController id="8sA-fw-0WS" sceneMemberID="viewController">
+                <viewController id="8sA-fw-0WS" customClass="statsViewViewController" customModule="highDeath" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QZi-bK-Q4g">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oo1-CK-DQ8">
-                                <rect key="frame" x="75" y="91" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="6si-Ne-5yF"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="PK2-Qb-2Nx"/>
-                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qp0-yG-uKJ">
+                                <rect key="frame" x="0.0" y="91" width="390" height="670"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1cV-Dd-5qs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1cV-Dd-5qs" firstAttribute="trailing" secondItem="qp0-yG-uKJ" secondAttribute="trailing" id="Qom-qO-h6i"/>
+                            <constraint firstItem="qp0-yG-uKJ" firstAttribute="top" secondItem="1cV-Dd-5qs" secondAttribute="top" id="Rl6-Le-gbV"/>
+                            <constraint firstItem="qp0-yG-uKJ" firstAttribute="leading" secondItem="1cV-Dd-5qs" secondAttribute="leading" id="XIy-Na-ktb"/>
+                            <constraint firstItem="1cV-Dd-5qs" firstAttribute="bottom" secondItem="qp0-yG-uKJ" secondAttribute="bottom" id="ph2-fb-vlt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eTM-Qu-VOd"/>
+                    <connections>
+                        <outlet property="labelOutlet" destination="qp0-yG-uKJ" id="Tqv-iH-Jqf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOc-ct-M7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

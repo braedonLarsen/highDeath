@@ -18,6 +18,7 @@
 		459B56E729379A7400F79548 /* highDeathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B56E629379A7400F79548 /* highDeathTests.swift */; };
 		459B56F129379A7400F79548 /* highDeathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B56F029379A7400F79548 /* highDeathUITests.swift */; };
 		459B56F329379A7400F79548 /* highDeathUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459B56F229379A7400F79548 /* highDeathUITestsLaunchTests.swift */; };
+		C134F3C4294AF1CD003D391E /* statsViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C134F3C3294AF1CD003D391E /* statsViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		459B56EC29379A7400F79548 /* highDeathUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = highDeathUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		459B56F029379A7400F79548 /* highDeathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highDeathUITests.swift; sourceTree = "<group>"; };
 		459B56F229379A7400F79548 /* highDeathUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highDeathUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C134F3C3294AF1CD003D391E /* statsViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = statsViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				45616E39293A3B660058B151 /* GameViewController.swift */,
 				45616E37293A38A60058B151 /* Character.swift */,
 				459B56D529379A7200F79548 /* Main.storyboard */,
+				C134F3C3294AF1CD003D391E /* statsViewViewController.swift */,
 				459B56D829379A7300F79548 /* Assets.xcassets */,
 				459B56DA29379A7300F79548 /* LaunchScreen.storyboard */,
 				459B56DD29379A7400F79548 /* Info.plist */,
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45616E3A293A3B660058B151 /* GameViewController.swift in Sources */,
+				C134F3C4294AF1CD003D391E /* statsViewViewController.swift in Sources */,
 				459B56D429379A7200F79548 /* ViewController.swift in Sources */,
 				459B56D029379A7200F79548 /* AppDelegate.swift in Sources */,
 				45616E38293A38A60058B151 /* Character.swift in Sources */,
