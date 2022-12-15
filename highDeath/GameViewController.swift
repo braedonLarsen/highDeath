@@ -37,7 +37,7 @@ class GameViewController: UIViewController {
     var villainArray = [villian]()
     var healerStats = healer(Hh: 100, Hm: 500,At: 40)
     var timeSince: Double = 0.0
-    var currentVillian = Int.random(in: 0..<5)
+    var currentVillian = Int.random(in: 0..<7)
     var activeVillian = villian(VaR: 0, Vh: 45, VaD: 0, n: "nil")
     var boolDict = ["paladin":false, "rouge":false,"ranger":false,"cleric":false,"mage":false]
    
@@ -270,6 +270,7 @@ class GameViewController: UIViewController {
         {
             //Palidan pos 0 outlets 4, Ranger pos 1 outlets 1, Wizard pos 2 outlet 3, Rouge pos 3 outlet five
             
+            print(activeVillian.health)
             var palidanHealthPrecent = 0.0
             var rangerHealthPrecent = 0.0
             var wizardHealthPrecent = 0.0
@@ -322,7 +323,7 @@ class GameViewController: UIViewController {
             if activeVillian.isDead == true
             {
               print("new villian")
-                activeVillian = villainArray[Int.random(in: 0..<5)]
+                activeVillian = villainArray[Int.random(in: 0..<7)]
                 activeVillian.health = activeVillian.maxHealth
                villianLabel.text = "\(villainArray[currentVillian].name)"
                 
@@ -331,6 +332,7 @@ class GameViewController: UIViewController {
         }
     func deathSave()
         {
+            print("checking death")
             for heroes in heroesArray
             {
                 if heroes.health <= 0
@@ -341,6 +343,7 @@ class GameViewController: UIViewController {
             }
             if activeVillian.health <= 0
             {
+                print("villian has died")
                 activeVillian.isDead = true
             }
             

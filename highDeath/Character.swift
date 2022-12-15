@@ -10,14 +10,14 @@ import Foundation
 public class heroes
 {
     var attackRate: Double
-    var maxHealth: Int
-    var health: Int
+    var maxHealth: Double
+    var health: Double
     var attackDamage: Int
     var timeToAttack: Double
     var isDead: Bool
     
  //hero init
-    init(aR: Double, h: Int, aD: Int )
+    init(aR: Double, h: Double, aD: Int )
     {
         attackRate = aR
         maxHealth = h
@@ -26,7 +26,7 @@ public class heroes
         timeToAttack = attackRate
         isDead = false
     }
-    func getHealth() -> Int
+    func getHealth() -> Double
     {
         return health
     }
@@ -40,7 +40,7 @@ public class heroes
     }
     func takeDamage(d:Int)
     {
-        health -= d
+        health -= Double(d)
     }
     func attack(v:villian)
     {
@@ -56,15 +56,15 @@ public class heroes
 public class villian
 {
     var attackRate: Double
-    var health: Int
-    var maxHealth: Int
+    var health: Double
+    var maxHealth: Double
     var attackDamage: Int
     var timeToAttack: Double
     var name: String
     var isDead: Bool
     
     //villian init
-    init(VaR: Double, Vh: Int, VaD: Int ,n: String)
+    init(VaR: Double, Vh: Double, VaD: Int ,n: String)
         {
             attackRate = VaR
             health = Vh
@@ -86,13 +86,13 @@ public class villian
     {
         timeToAttack -= d
     }
-    func getHealth() -> Int
+    func getHealth() -> Double
     {
        return health
     }
     func takeDamage(d:Int)
     {
-        health -= d
+        health -= Double(d)
     }
     func quickHeal(){
         
@@ -130,7 +130,7 @@ public class healer
     
     func attack(v:villian)
     {
-        v.health -= attack
+        v.health -= Double(attack)
     }
     func atkBuff(){
         attack += 5
