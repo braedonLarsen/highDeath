@@ -315,6 +315,7 @@ class GameViewController: UIViewController {
             
             currentVillianAttack = Double(activeVillian.timeToAttack/activeVillian.attackRate)
             villianAttack.value = Float(currentVillianAttack)
+            villianLabel.text = "\(activeVillian.name)"
             
         }
     func setVillian()
