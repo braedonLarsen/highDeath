@@ -132,5 +132,8 @@ public class healer
     {
         v.health -= attack
     }
+    func atkBuff(){
+        attack += 5
+    }
     
 }

@@ -83,46 +83,7 @@ class GameViewController: UIViewController {
         villianLabel.text = "\(activeVillian.name)"
         // Do any additional setup after loading the view.
         
-        
-       /* @IBAction func paladin(_ sender: UITapGestureRecognizer) {
-            boolDict.updateValue(true, forKey: "paladin")
-            boolDict.updateValue(false, forKey: "rouge")
-            boolDict.updateValue(false, forKey: "ranger")
-            boolDict.updateValue(false, forKey: "cleric")
-            boolDict.updateValue(false, forKey: "mage")
-        }
-        
-        @IBAction func rouge(_ sender: UITapGestureRecognizer) {
-            boolDict.updateValue(false, forKey: "paladin")
-            boolDict.updateValue(true, forKey: "rouge")
-            boolDict.updateValue(false, forKey: "ranger")
-            boolDict.updateValue(false, forKey: "cleric")
-            boolDict.updateValue(false, forKey: "mage")
-        }
-        
-        @IBAction func ranger(_ sender: UITapGestureRecognizer) {
-            boolDict.updateValue(false, forKey: "paladin")
-            boolDict.updateValue(false, forKey: "rouge")
-            boolDict.updateValue(true, forKey: "ranger")
-            boolDict.updateValue(false, forKey: "cleric")
-            boolDict.updateValue(false, forKey: "mage")
-        }
-        
-        @IBAction func cleric(_ sender: UITapGestureRecognizer) {
-            boolDict.updateValue(false, forKey: "paladin")
-            boolDict.updateValue(false, forKey: "rouge")
-            boolDict.updateValue(false, forKey: "ranger")
-            boolDict.updateValue(true, forKey: "cleric")
-            boolDict.updateValue(false, forKey: "mage")
-        }
-        @IBAction func mage(_ sender: UITapGestureRecognizer) {
-            boolDict.updateValue(false, forKey: "paladin")
-            boolDict.updateValue(false, forKey: "rouge")
-            boolDict.updateValue(false, forKey: "ranger")
-            boolDict.updateValue(false, forKey: "cleric")
-            boolDict.updateValue(true, forKey: "mage")
-        }
-        
+    /*
         @IBAction func quickHealButton(_ sender: Any) {
             if boolDict["ranger"] == true{
                 heroesArray[1].quickHeal()
@@ -169,11 +130,91 @@ class GameViewController: UIViewController {
         
         
     }
-    
-    @IBAction func fourCharacterAction(_ sender: UITapGestureRecognizer) {
+ 
+    @IBAction func paladinTap(_ sender: UITapGestureRecognizer) {
+        boolDict.updateValue(true, forKey: "paladin")
+        boolDict.updateValue(false, forKey: "rouge")
+        boolDict.updateValue(false, forKey: "ranger")
+        boolDict.updateValue(false, forKey: "cleric")
+        boolDict.updateValue(false, forKey: "mage")
     }
     
+    @IBAction func rogueTap(_ sender: UITapGestureRecognizer) {
+        boolDict.updateValue(false, forKey: "paladin")
+        boolDict.updateValue(true, forKey: "rouge")
+        boolDict.updateValue(false, forKey: "ranger")
+        boolDict.updateValue(false, forKey: "cleric")
+        boolDict.updateValue(false, forKey: "mage")
+    }
+    @IBAction func rangerTap(_ sender: UITapGestureRecognizer) {
+        boolDict.updateValue(false, forKey: "paladin")
+        boolDict.updateValue(false, forKey: "rouge")
+        boolDict.updateValue(true, forKey: "ranger")
+        boolDict.updateValue(false, forKey: "cleric")
+        boolDict.updateValue(false, forKey: "mage")
+    }
+    @IBAction func clericTap(_ sender: UITapGestureRecognizer) {
+        boolDict.updateValue(false, forKey: "paladin")
+        boolDict.updateValue(false, forKey: "rouge")
+        boolDict.updateValue(false, forKey: "ranger")
+        boolDict.updateValue(true, forKey: "cleric")
+        boolDict.updateValue(false, forKey: "mage")
+
+    }
+    @IBAction func wizardTap(_ sender: Any) {
+        boolDict.updateValue(false, forKey: "paladin")
+        boolDict.updateValue(false, forKey: "rouge")
+        boolDict.updateValue(false, forKey: "ranger")
+        boolDict.updateValue(false, forKey: "cleric")
+        boolDict.updateValue(true, forKey: "mage")
+    }
     
+    @IBAction func quickHeal(_ sender: UIButton) {
+        if boolDict["ranger"] == true{
+            heroesArray[1].quickHeal()
+        }
+        else if boolDict["paladin"] == true{
+            heroesArray[0].quickHeal()
+        }
+        else if boolDict["rouge"] == true {
+            heroesArray[3].quickHeal()
+        }
+        else if boolDict["cleric"] == true{
+            healerStats.quickHeal()
+        }
+        else if  boolDict["mage"] == true{
+            heroesArray[2].quickHeal()
+        }
+    }
+    
+    @IBAction func groupHeal(_ sender: UIButton) {
+        for heroes in heroesArray
+        {
+            heroes.quickHeal()
+        }
+    }
+    
+    @IBAction func ClericAttack(_ sender: UIButton) {
+        healerStats.attack(v: activeVillian)
+    }
+    
+    @IBAction func attackBuff(_ sender: UIButton) {
+        if boolDict["ranger"] == true{
+            heroesArray[1].atkBuff()
+        }
+        else if boolDict["paladin"] == true{
+            heroesArray[0].atkBuff()
+        }
+        else if boolDict["rouge"] == true {
+            heroesArray[3].atkBuff()
+        }
+        else if boolDict["cleric"] == true{
+            healerStats.atkBuff()
+        }
+        else if  boolDict["mage"] == true{
+            heroesArray[2].atkBuff()
+        }
+    }
     
     func timing(){
         let timer = Timer.scheduledTimer(withTimeInterval: 0.001 , repeats: true) {
